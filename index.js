@@ -1,8 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-import { config } from 'dotenv';
-config(); // не было
+// import { config } from 'dotenv';
+// config(); // не было
 
 import cors from 'cors';
 
@@ -20,7 +20,9 @@ import { BookingController } from './controllers/BookingController.js';
 // import User from './models/User.js';
 
 mongoose
-   .connect(process.env.MONGODB_URI)
+   .connect(
+      'mongodb+srv://login:12345@cluster0.qsmsw8w.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0',
+   )
    .then(() => console.log('DB ok'))
    .catch((err) => console.log('DB error', err));
 
